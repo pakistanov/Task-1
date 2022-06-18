@@ -1,11 +1,8 @@
 #include <iostream>
 bool isPowTwo(uint64_t value)
 {
-    if (value == 1) return true;
-    while (value!=2)
-    {
-        if (value % 2 ==1) return false;
-        value=value/2;
-    }
-    return true;
+    if (value <= 0) return false;
+    if ((value & (value-1)) ==0 ) return true;
+    else
+    return false;
 }
