@@ -1,11 +1,12 @@
 #pragma once
 #include <vector>
+using namespace std;
 
 
 template<typename T>
 class storage
 {
-    static std::vector<T> content;
+    static vector<T> content;
     storage()   {};
     storage(storage const &);
     storage & operator=(storage const &);
@@ -13,7 +14,7 @@ public:
     void addTo(T value){
         content.push_back(value);
     }
-    
+
     void deleteFrom(T value){
         for (int i = 0; i < content.size(); i++)
         {
