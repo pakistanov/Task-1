@@ -5,7 +5,6 @@
 template<typename T>
 class storage
 {
-
     static std::vector<T> content;
     storage()   {};
     storage(storage const &);
@@ -14,8 +13,7 @@ public:
     void addTo(T value){
         content.push_back(value);
     }
-
-
+    
     void deleteFrom(T value){
         for (int i = 0; i < content.size(); i++)
         {
