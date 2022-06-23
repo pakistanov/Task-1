@@ -3,9 +3,8 @@
 using namespace std;
 
 int main() {
-    int a;
-    cout << "Enter a number " ;
-    cin >> a;
-    cout << "Resul is " <<isPowTwo(a) << endl;
+    int a=6;
+    storage<typeof(a)> & obj = storage<typeof(a)>::Get();
+    obj.addTo(a);
     return 0;
 }
