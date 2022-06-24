@@ -4,30 +4,32 @@ using namespace std;
 
 
 template<typename T>
-class storage
+class Storage
 {
-    static vector<T> content;
-    storage()   {};
-    storage(storage const &);
-    storage & operator=(storage const &);
+    vector<T> content;
+    Storage()   {};
+    Storage(const Storage &);
+    Storage & operator=(const Storage &);
 public:
-    void addTo(T value)
+    void AddTo(T value)
     {
         content.push_back(value);
     }
 
-    void deleteFrom(T value){
+    void DeleteFrom(T value){
         for (typename vector<T>::iterator i =content.begin(); i!=content.end(); i++)
         {
-            if (content[i]==value) content.erase(i);
+            if (content[i]==value)
+                content.erase(i);
         }
     }
 
-    static storage & Instance()
+    static Storage & Instance()
     {
-        static storage OnlyOneObj;
-        return OnlyOneObj;
+        static Storage obj;
+        return obj;
     }
 };
 
 bool isPowTwo(uint64_t value);
+
